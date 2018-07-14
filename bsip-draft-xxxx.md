@@ -28,22 +28,8 @@ mechanism or set of trading rules for exchange.
 
 # Specifications
 
-This proposal will charge the minimum order fee at the time the order is
-created. It will be refunded if the order is canceled before any part of the
-order is filled. A small fee will be charged to cancel orders. This order
-cancellation fee will be just enough to prevent spam (equivalent of a fraction
-of a Dollar cent).
-
-If the fee is paid in something other than BTS, it will be converted to BTS via
-the fee pool at the time the order is placed. If the order is canceled, BTS will
-be refunded to the user's account.
-
-Recommended Order Creation Fee: $0.20 for normal users $0.04 for LTM Recommended
-Order Cancelation Fee: $0.01 for normal users, $0.002 for LTM
-
-As a result, the minimum market fees for normal users will be less than those of 
-centralized exchanges for orders greater than $100. For lifetime members, orders
-above $20 will be cheaper than the 0.2% fee charged by normal exchanges.
+This proposal is about new Auction feature which can extend BitShares financial platform in order to make BitShares more
+popular and more flexible to cover the best financial possibilities.
 
 ## Types
 
@@ -109,46 +95,6 @@ Auctions may differ as to the price at which the item is sold, whether the first
 Without modification, auction generally refers to an open, demand auction, with or without a reservation price (or reserve), with the item sold to the highest bidder.
 
 # Discussion
-
-## Fees payed in BTS
-
-Paying fees in BTS is the cheapest way to pay fees because the
-core-exchange-rate for UIA usually charge a slight premium to handle market
-risk. This means that the next order you place will use the BTS to pay the fee
-rather than the user asset. Think about it as getting a refund in "store
-credit". If you place an order, cancel an order and then decide you don't want
-to do any more business with BitShares then you will have to sell the BTS (which
-will require placing an order) or "transferring".
-
-Stated another way, for trading bots it doesn't matter that the refund is in a
-different asset. For users it doesn't matter either. It will only impact those
-who attempt to flood with a lot of orders, then cancel all of them. They will
-end up converting their UIA to BTS at poor exchange rates and then having to
-sell the BTS.
-
-Bottom line, we presume someone placing an order will eventually want it filled.
-By refunding them in BTS they can eventually get it filled and end up with 0
-BTS.
-
-## Discouraging of Makers when not Refunding Partially Filled Orders
-
-A concern is that the rule may encourage taker but discourage maker, as if an
-order is partly filled, the creation fee will not be refunded, and obviously
-taker can be more easily to make sure his order is fully, not partly filled.
-
-## Anti-Spam considerations
-
-Furthermore, a fee has to be charged for anti-spam. Orders create objects which
-must be kept in memory which imposes a resource cost on every node on the
-network (plus more cost for storage / bandwidth for the transaction). Cancelling
-an order frees up memory, which can be viewed as a negative resource cost,
-represented by the refunded fee.
-
-Ultimately, this reflects a tension between the economic value of liquidity
-(market makers should be encouraged because a bigger book is better) and its
-cost (every order consumes memory). If we make the fee equal to cost, someone
-deciding whether to place an order can determine whether the cost exceeds the
-value, and the tension is resolved in a decentralized market-based way.
 
 ## Bidding strategy
 
